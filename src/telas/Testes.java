@@ -19,7 +19,8 @@ public class Testes {
         
         Agendamento agendamento = new Agendamento(1, cliente, servico, 50, "10/02/2020  10:10");
         System.out.println(agendamento.getData());
-        System.out.println(agendamento.getCliente().getNome());
+        System.out.println(agendamento.getCliente().getNome()); 
+        
 	}
 
 }
