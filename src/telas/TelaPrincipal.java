@@ -41,17 +41,6 @@ public class TelaPrincipal extends JFrame {
 		setContentPane(PainelPrincipal);
 		
 		PainelPrincipal.setLayout(new GridBagLayout());
-		GridBagConstraints gbc = new GridBagConstraints();
-		gbc.weightx = 0.5;
-		gbc.weighty = 0.5;
-		
-		JPanel panelCentral = new JPanel();
-		
-		gbc.anchor = GridBagConstraints.WEST;
-		gbc.fill = GridBagConstraints.VERTICAL;
-		gbc.gridx = 0;
-		gbc.gridy = 0;
-		PainelPrincipal.add(panelCentral, gbc);
 		
 		
 	}
