@@ -41,6 +41,7 @@ public class TelaPrincipal extends JFrame {
 		PainelPrincipal.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(PainelPrincipal);
 		
+<<<<<<< HEAD
 		GridBagLayout gbl_PainelPrincipal = new GridBagLayout();
 		gbl_PainelPrincipal.columnWidths = new int[]{824, 177};
 		gbl_PainelPrincipal.rowWeights = new double[]{1.0, 0.0};
@@ -77,6 +78,9 @@ public class TelaPrincipal extends JFrame {
 		gbc_lblNewLabel_2.gridx = 1;
 		gbc_lblNewLabel_2.gridy = 1;
 		PainelPrincipal.add(lblNewLabel_2, gbc_lblNewLabel_2);
+=======
+		PainelPrincipal.setLayout(new GridBagLayout());
+>>>>>>> a97c4a3867cbbedc4d00ba6394f76c5ea7d7deef
 		
 		
 	}
