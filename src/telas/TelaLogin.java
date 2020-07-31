@@ -1,25 +1,22 @@
 package telas;
 
+import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
-import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JPasswordField;
-import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
-
-import controller.LoginController;
-
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.JPasswordField;
+import javax.swing.JButton;
 
 public class TelaLogin extends JFrame {
 
 	private JPanel painelPrincipal;
 	private JTextField textUsuario;
 	private JPasswordField pwdPassword;
-    private LoginController loginController;
+
 	/**
 	 * Launch the application.
 	 */
@@ -48,8 +45,6 @@ public class TelaLogin extends JFrame {
 		setContentPane(painelPrincipal);
 		painelPrincipal.setLayout(null);
 		
-		loginController = new LoginController(this);
-				
 		JPanel panelCentral = new JPanel();
 		panelCentral.setBounds(12, 12, 329, 233);
 		painelPrincipal.add(panelCentral);
@@ -70,33 +65,7 @@ public class TelaLogin extends JFrame {
 		panelCentral.add(pwdPassword);
 		
 		JButton btnLogin = new JButton("Login");
-		btnLogin.setBounds(106, 155, 117, 25);
+		btnLogin.setBounds(104, 155, 117, 25);
 		panelCentral.add(btnLogin);
-		
-		btnLogin.addActionListener(ev ->{
-	      loginController.Clicando();
-		});
-	}
-
-	
-	public JTextField getTextUsuario() {
-		return textUsuario;
-	}
-
-	public void setTextUsuario(JTextField textUsuario) {
-		this.textUsuario = textUsuario;
-	}
-
-	public JPasswordField getPwdPassword() {
-		return pwdPassword;
-	}
-
-	public void setPwdPassword(JPasswordField pwdPassword) {
-		this.pwdPassword = pwdPassword;
-	}
-
-	public void exibeMensagem(String mensagem) {
-		JOptionPane.showMessageDialog(null, mensagem);
-		
 	}
 }
