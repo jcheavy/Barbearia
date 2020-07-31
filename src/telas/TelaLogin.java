@@ -1,22 +1,31 @@
 package telas;
 
-import java.awt.BorderLayout;
+import java.awt.Container;
 import java.awt.EventQueue;
+import java.awt.FlowLayout;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import javax.swing.JLabel;
-import javax.swing.JTextField;
-import javax.swing.JPasswordField;
 import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+import utils.Utils;
 
 public class TelaLogin extends JFrame {
 
-	private JPanel painelPrincipal;
-	private JTextField textUsuario;
-	private JPasswordField pwdPassword;
-
+	private JButton btLogin;
+	private JButton btLimpar;
+	private JTextField txUsuario;
+	private JTextField txSenha;
+	private JLabel lbTitulo;
+	private JLabel lbUsuario;
+	private JLabel lbSenha;
+    
+	private JPanel panelCentro;
+	
 	/**
 	 * Launch the application.
 	 */
@@ -37,35 +46,34 @@ public class TelaLogin extends JFrame {
 	 * Create the frame.
 	 */
 	public TelaLogin() {
-		setResizable(false);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 353, 299);
-		painelPrincipal = new JPanel();
-		painelPrincipal.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(painelPrincipal);
-		painelPrincipal.setLayout(null);
+		Container telaLogin = getContentPane();
+	    setLayout(null);
+	    setLocation(500,200);
+	    setSize(300,300);
+	    setResizable(false);
+		GridBagLayout gb = new GridBagLayout();
+		GridBagConstraints gbc = new GridBagConstraints();
 		
-		JPanel panelCentral = new JPanel();
-		panelCentral.setBounds(12, 12, 329, 233);
-		painelPrincipal.add(panelCentral);
-		panelCentral.setLayout(null);
+	    panelCentro = new JPanel();
+	    telaLogin.add(panelCentro);
+	    telaLogin.setBackground(Utils.azul);
+	    panelCentro.setBackground(Utils.bege);
+	    panelCentro.setBounds(10,10,280,250);
+	    panelCentro.setLayout(gb);
+	    
+        lbTitulo = new JLabel("LOGIN");
+        lbTitulo.setFont(Utils.gramond_20);
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        gbc.gridx = 1;
+        gbc.gridy = 1;
+              
+	    panelCentro.add(lbTitulo, gbc);
+	    
+	    lbUsuario = new JLabel("Usuário");
+	    lbUsuario.setFont(Utils.gramond_15);
+	    //panelCentro.add(lbUsuario);
 		
-		JLabel lblLogin = new JLabel("LOGIN");
-		lblLogin.setBounds(132, 40, 64, 15);
-		panelCentral.add(lblLogin);
+		setVisible(true);
 		
-		textUsuario = new JTextField();
-		textUsuario.setBounds(107, 75, 114, 25);
-		panelCentral.add(textUsuario);
-		textUsuario.setColumns(10);
-		
-		pwdPassword = new JPasswordField();
-		pwdPassword.setText("password");
-		pwdPassword.setBounds(107, 115, 114, 25);
-		panelCentral.add(pwdPassword);
-		
-		JButton btnLogin = new JButton("Login");
-		btnLogin.setBounds(104, 155, 117, 25);
-		panelCentral.add(btnLogin);
 	}
 }
