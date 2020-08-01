@@ -17,6 +17,10 @@ public class Utils {
 		public static Font gramond_20 = new Font("Garamond", style, 20);
 		public static Font gramond_15 = new Font("Garamond", style, 15);
 		
+		public static Font gramond_(int tam) {
+			return new Font("Garamond", style, tam);
+		}
+		
 		
 		/**
 		 * Cores 
